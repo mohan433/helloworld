@@ -16,14 +16,7 @@ pipeline {
              }
           }
        }
-       stage ('testing Satge') {
-          steps {
-             withMaven(maven : 'apache-maven-3.6.3') }
-                sh 'mvn test'
-               
-             }
-          }
-       }
+       
        stage ('Deployment Satge') {
           steps {
              withMaven(maven : 'apache-maven-3.6.3') }
