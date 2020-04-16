@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools{
+          maven 'maven 3.6.3'
+          jdk 'java 11'
+    }
 
     Stages {
        stages ('BUILD') {
@@ -16,7 +20,7 @@ pipeline {
           steps {
              withMaven(maven : 'apache-maven-3.6.3') }
                 sh 'mvn test'
-                sh 'https://github.com/mohan433/helloworld.git'
+               
              }
           }
        }
@@ -24,6 +28,7 @@ pipeline {
           steps {
              withMaven(maven : 'apache-maven-3.6.3') }
                sh 'mvn deployment'
+                sh 'https://github.com/mohan433/helloworld.git'
              }
           }
        }
