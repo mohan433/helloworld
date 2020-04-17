@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools {
+         tool name: 'Maven', type: 'maven'
+     }
     stages{
         stage('Git Checkout'){
              steps{   
@@ -7,10 +10,7 @@ pipeline{
             }
         }
     }
-     tools {
-         maven 'maven'
-     }
-   stages{
+  stages{
         stage('Build'){
              steps{
                   sh 'mvn -B -DskipTests clean package'
