@@ -5,6 +5,8 @@ node {
     stage ('compile-package'){
       // Get maven home path
       def mavenhome = tool name: 'Maven', type: 'maven'
+      def javahome = tool  name: 'JAVA_11', type: 'jdk'
       sh "${mavenhome}/bin/mvn package"
+      sh "${JDK}/bin/java
     }
  }   
