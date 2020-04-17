@@ -9,6 +9,7 @@ pipeline{
     }  
         stage('maven build'){
             steps{
+                tool name: 'Maven', type: 'maven'
                 sh "mvn clean package"
             }
         }
