@@ -1,16 +1,16 @@
 pipeline{
     agent any
     stages{
-         stage('Git Checkout'){
-             steps{   
-                  git 'https://github.com/mohan433/helloworld'
-             }
-          }
-    }  
-        stage('maven build'){
+         stage('maven build'){
             steps{
                 tool name: 'Maven', type: 'maven'
                 sh 'mvn clean install'
+             }
+          }
+    }  
+        stage('Git Checkout'){
+             steps{   
+                  git 'https://github.com/mohan433/helloworld'
             }
         }
 }                   
