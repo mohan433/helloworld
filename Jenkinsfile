@@ -12,7 +12,7 @@ pipeline{
                 sh "mvn clean package"
             }
         }
-    stage{'Deployment stage'){
+    stage{'Deployment'){
         steps{
             withmaven(maven: 'maven3.6.3'){
                 sh 'mvn deploy'
