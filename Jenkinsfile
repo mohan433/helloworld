@@ -1,7 +1,7 @@
 pipeline{
     agent any
     
-    enivornmnet{
+    enivornment{
         PATH = "/apache-maven-3.6.3/bin:$PATH"
     }
     stages{
