@@ -1,6 +1,5 @@
-pipeline {
-  agent any
-  stage ('SCM checkout'){
+node {
+    stage ('SCM checkout'){
     git "https://github.com/mohan433/helloworld"
     }
     stage ('compile-package'){
