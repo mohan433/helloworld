@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stage {
-    git "https://github.com/mohan433/helloworld"
-    }
-    stage ('install package'){
+         stage ('Git Checkout'){
+             steps{   
+                  git 'https://github.com/mohan433/helloworld'
       // Get maven home path
       def mavenhome = tool name: 'Maven', type: 'maven'
       def javahome = tool  name: 'JAVA_11', type: 'jdk'
